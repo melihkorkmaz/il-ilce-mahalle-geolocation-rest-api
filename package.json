@@ -1,0 +1,44 @@
+{
+  "name": "address-api",
+  "version": "1.0.0",
+  "description": "Türkiye için il ilçe semt veritabanı. Bölgesel bilgiler",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "npm run build && node ./build/index.js",
+    "start:dev": "nodemon --exec babel-node ./src/index.js",
+    "test": "npm run lint && mocha ./test/**/*.spec.js --timeout 20000 --require babel-register",
+    "lint": "eslint ./src/**/*.js --fix",
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && babel -d ./build ./src -s"
+  },
+  "keywords": [
+    "il ilçe",
+    "il",
+    "ilçe",
+    "rest",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.0-beta4",
+    "morgan": "^1.9.0",
+    "winston": "^3.0.0-rc6",
+    "winston-transport": "^4.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.17.5"
+  }
+}
