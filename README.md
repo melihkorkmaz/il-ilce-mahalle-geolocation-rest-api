@@ -1,4 +1,4 @@
-# İl İlçe Bölge ve Mahalle Bilgisi İçin Rest - API
+# İl, İlçe, Bölge ve Mahalle Bilgisi İçin Rest - API
 
 Bu api Türkiye'de yer alan il,ilçe ve mahalle bilgilerini içerir. İl ve İlçe bazında geolocation (enlem-boylam, poligon ve boundingbox) bilgileri de yer almaktadır. Mongodb backup dosyalarını [buradan](https://drive.google.com/file/d/1e6v4S_-BK8Zs43HYBH5ftidBDrHlOZY7/view?usp=sharing) indirebilirsiniz.
 
