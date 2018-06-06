@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import routes from './routes';
 import mongo from './utils/mongo.helper';
+import config from './config';
 import loggerMiddleware from './utils/logger.middleware';
 
 const app = express();
@@ -28,5 +29,5 @@ routes(app);
 if (NODE_ENV === 'test') {
 	module.exports = app;
 } else {
-	app.listen(process.env.PORT || 8080, () => console.log('Server has been started'));
+	app.listen(process.env.PORT || config.port, () => console.log('Server has been started'));
 }

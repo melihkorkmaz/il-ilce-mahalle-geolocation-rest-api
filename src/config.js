@@ -1,4 +1,6 @@
 module.exports = {
     maxDataItem : 100,
-    connectionString : ""
+    connectionString : "",
+    port : 8080,
+    apiVersion : "v1"
 }

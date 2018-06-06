@@ -18,7 +18,7 @@
     "rest",
     "api"
   ],
-  "author": "",
+  "author": "Melih Korkmaz - melihkorkmaz84@gmail.com",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",

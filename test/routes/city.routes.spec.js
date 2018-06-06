@@ -18,7 +18,7 @@ describe('Cities routes', () => {
     describe('/cities', () => {
         it('should return top 100 cities as default', done => {
             chai.request(server)
-                .get('/cities')
+                .get(`/${config.apiVersion}/cities`)
                 .end((err, res) => {
                     expect(res.status).to.equal(200);
                     expect(res.body.data).to.be.a('array');
@@ -37,7 +37,7 @@ describe('Cities routes', () => {
 
         it('should return limited cities data', done => {
             chai.request(server)
-                .get('/cities?limit=10')
+                .get(`/${config.apiVersion}/cities?limit=10`)
                 .end((err, res) => {
                     expect(res.status).to.equal(200);
                     expect(res.body.data).to.be.a('array');
@@ -55,7 +55,7 @@ describe('Cities routes', () => {
 
         it('should return towns if requested', done => {
             chai.request(server)
-                .get('/cities?fields=towns,name')
+                .get(`/${config.apiVersion}/cities?fields=towns,name`)
                 .end((err, res) => {
                     expect(res.status).to.equal(200);
                     expect(res.body.data).to.be.a('array');
@@ -82,7 +82,7 @@ describe('Cities routes', () => {
     describe('/cities/:id', done => {
         it('should return city without towns', (done) => {
             chai.request(server)
-            .get('/cities/fbf55ec2f75ae0ee54a2c55b49eef828')
+            .get(`/${config.apiVersion}/cities/fbf55ec2f75ae0ee54a2c55b49eef828`)
             .end((err, res) => {
                 expect(res.status).to.equal(200);
                 expect(res.body.data).to.be.a('object');
@@ -95,7 +95,7 @@ describe('Cities routes', () => {
         })
         it('should return city towns if requested', (done) => {
             chai.request(server)
-            .get('/cities/fbf55ec2f75ae0ee54a2c55b49eef828?fields=name,towns')
+            .get(`/${config.apiVersion}/cities/fbf55ec2f75ae0ee54a2c55b49eef828?fields=name,towns`)
             .end((err, res) => {
                 expect(res.status).to.equal(200);
                 expect(res.body.data).to.be.a('object');
@@ -115,7 +115,7 @@ describe('Cities routes', () => {
     describe('/cities/:id/towns', done => {
         it('should return town list with default fields', (done) => {
             chai.request(server)
-            .get('/cities/fbf55ec2f75ae0ee54a2c55b49eef828/towns')
+            .get(`/${config.apiVersion}/cities/fbf55ec2f75ae0ee54a2c55b49eef828/towns`)
             .end((err, res) => {
                 expect(res.status).to.equal(200);
                 expect(res.body.data).to.be.a('array');

@@ -16,7 +16,7 @@ describe('Neighborhoods routes', () => {
     describe('/neighborhoods', () => {
         it('should return top 100 neighborhoods as default', done => {
             chai.request(server)
-                .get('/neighborhoods')
+                .get(`/${config.apiVersion}/neighborhoods`)
                 .end((err, res) => {
                     expect(res.status).to.equal(200);
                     expect(res.body.data).to.be.a('array');
@@ -38,7 +38,7 @@ describe('Neighborhoods routes', () => {
 
         it('should return limited neighborhoods data', done => {
             chai.request(server)
-                .get('/neighborhoods?limit=10')
+                .get(`/${config.apiVersion}/neighborhoods?limit=10`)
                 .end((err, res) => {
                     expect(res.status).to.equal(200);
                     expect(res.body.data).to.be.a('array');
@@ -61,7 +61,7 @@ describe('Neighborhoods routes', () => {
     describe('/neighborhoods/:id', done => {
         it('should return neighborhoods with default fields', (done) => {
             chai.request(server)
-                .get('/neighborhoods/00021ac2ce842415456ed4be91e1a9bf')
+                .get(`/${config.apiVersion}/neighborhoods/00021ac2ce842415456ed4be91e1a9bf`)
                 .end((err, res) => {
                     expect(res.status).to.equal(200);
                     expect(res.body.data).to.be.a('object');
