@@ -34,6 +34,9 @@ Sıralama City > Towns > Districts > Neighborhoods şeklindedir.
 Sıralama İl > İlçe > Semt > Mahalle şeklindedir.
 
 Servis adresi : http://geoapi.sanalonyedi.net/v1 
+
+**Örnek : http://geoapi.sanalonyedi.net/v1/cities**  
+
 <a name="cities"></a> 
 ## İller (/cities)
 Toplam 81 il bilgisini json array olarak listeler. Default alanlar sadece _id ve isim bilgisidir.
