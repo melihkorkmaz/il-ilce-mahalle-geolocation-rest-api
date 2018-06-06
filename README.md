@@ -1,6 +1,6 @@
 # İl, İlçe, Bölge ve Mahalle Bilgisi İçin Rest - API
 
-Bu api Türkiye'de yer alan il,ilçe ve mahalle bilgilerini içerir. İl ve İlçe bazında geolocation (enlem-boylam, poligon ve boundingbox) bilgileri de yer almaktadır. Mongodb backup dosyalarını [buradan](https://drive.google.com/file/d/1e6v4S_-BK8Zs43HYBH5ftidBDrHlOZY7/view?usp=sharing) indirebilirsiniz.
+Bu API Türkiye'de yer alan il, ilçe ve mahalle bilgilerini içerir. İl ve ilçe bazında geolocation (enlem-boylam, poligon ve boundingbox) bilgileri de yer almaktadır. Mongodb yedek dosyalarını [buradan](https://drive.google.com/file/d/1e6v4S_-BK8Zs43HYBH5ftidBDrHlOZY7/view?usp=sharing) indirebilirsiniz.
 
 **Ayrıca isterseniz bu servisi http://geoapi.sanalonyedi.net/v1 adresi üzerinden ücretsiz olarak kullanabilirsiniz.**
 
@@ -18,7 +18,7 @@ Bu api Türkiye'de yer alan il,ilçe ve mahalle bilgilerini içerir. İl ve İl�
     * [Konum Bilgisi (Geolocation)](#dataModelGeolocation)
 
 ## Polygon Nedir
-Polygon bir il'in yada ilçenin sınırlarının enlem ve boylam bilgisini içeren bir grup datadır. Bu bilgi ile bir noktanın o bölge içinde olup olmadığını bilebilir yada google map api ile harita üzerinde gösterebilirsiniz.
+Polygon bir ilin ya da ilçenin sınırlarının enlem ve boylam bilgisini içeren bir grup veridir. Bu bilgi ile bir noktanın o bölge içinde olup olmadığını bilebilir ya da Google Map API ile harita üzerinde gösterebilirsiniz.
 
 ![poligon bilgisi](https://image.ibb.co/hS8N8T/Screenshot_from_2018_06_06_12_16_32.png)
 
@@ -26,18 +26,18 @@ Polygon bir il'in yada ilçenin sınırlarının enlem ve boylam bilgisini içer
 # Servisin Kullanımı
 Tüm cevaplar { status : boolean, data : array, err : 'varsa hata' } şablonunda sunulur. Talep etmiş olduğunuz bilgi "data" bölümünde yer almaktadır. Beklenmeyen bir hata bulunduğunda status = false olacaktır.
 
-Kısıtlamalar: Alınan genel sonuçlarda maksimum 100 data servis edilir. Bu sayıyı ?limit=10 diyerek 10'a indirgeyebilirsiniz. Ayrıca bir sonraki sayfada yer alan bilgileri almak için ise ?skip=(number) şeklinde kullanım yapabilirsiniz.
+Kısıtlamalar: Alınan genel sonuçlarda maksimum 100 data servis edilir. Bu sayıyı ?limit=10 diyerek 10'a indirebilirsiniz. Ayrıca bir sonraki sayfada yer alan bilgileri almak için ise ?skip=(sayı) şeklinde kullanım yapabilirsiniz.
 
 **Tüm endpointler için query string olarak "fields, skip, limit" kullanılabilir. Fields istenen alanlara karşılık gelmektedir.**
 
 Sıralama City > Towns > Districts > Neighborhoods şeklindedir.  
 Sıralama İl > İlçe > Semt > Mahalle şeklindedir.
 
-Servis adresi : http://geoapi.sanalonyedi.net/v1 
+Servis adresi : http://geoapi.sanalonyedi.net/v1
 
 **Örnek : http://geoapi.sanalonyedi.net/v1/cities**  
 
-<a name="cities"></a> 
+<a name="cities"></a>
 ## İller (/cities)
 Toplam 81 il bilgisini json array olarak listeler. Default alanlar sadece _id ve isim bilgisidir.
 
@@ -393,7 +393,7 @@ ID'si verilmiş mahalle bilgisini döner.
 <a name="dataModelCity"></a>
 ### İl (City)
 | Alan | Tip | Açıklama |
-| ------ | ------ | ------ | 
+| ------ | ------ | ------ |
 | _id | string | Şehir id|
 | name | string | Şehir ismi |
 | towns | array | İlçe id listesi |
@@ -402,7 +402,7 @@ ID'si verilmiş mahalle bilgisini döner.
 <a name="dataModelTown"></a>
 ### İlçe (Town)
 | Alan | Tip | Açıklama |
-| ------ | ------ | ------ | 
+| ------ | ------ | ------ |
 | _id | string | İlçe id|
 | name | string | İlçe ismi |
 | city | string | Şehir ismi |
@@ -412,7 +412,7 @@ ID'si verilmiş mahalle bilgisini döner.
 <a name="dataModelDistrict"></a>
 ### Semt (District)
 | Alan | Tip | Açıklama |
-| ------ | ------ | ------ | 
+| ------ | ------ | ------ |
 | _id | string | Semt id|
 | name | string | Semt ismi |
 | town | string | İlçe ismi |
@@ -422,7 +422,7 @@ ID'si verilmiş mahalle bilgisini döner.
 <a name="dataModelNeighborhood"></a>
 ### Mahalle (Neighborhood)
 | Alan | Tip | Açıklama |
-| ------ | ------ | ------ | 
+| ------ | ------ | ------ |
 | _id | string | Mahalle id|
 | name | string | Mahalle ismi |
 | district | string | Semt ismi |
@@ -433,7 +433,7 @@ ID'si verilmiş mahalle bilgisini döner.
 <a name="dataModelGeolocation"></a>
 ### Konum Bilgisi (Geolocation)
 | Alan | Tip | Açıklama |
-| ------ | ------ | ------ | 
+| ------ | ------ | ------ |
 | lat | string | Enlem |
 | lon | string | Boylam |
 | polygons | array | Bölge sınırları |
