@@ -37,6 +37,24 @@ Servis adresi : http://geoapi.sanalonyedi.net/v1
 
 **Örnek : http://geoapi.sanalonyedi.net/v1/cities**  
 
+<a name="search"></a>
+## Koordinat Arama (/search/coordinates)
+Arama özelliğini kullanarak, servise gönderdiğiniz enlem ve boylam bilgisi karşılığında bu koordinatın hangi ilçe ve ilde olduğunun bilgisini 
+alabilirsiniz.
+
+### /search/coordinates?lat=40.340134&lon=27.971170
+```
+[
+    {
+        "_id":"ce941560c5a7ba9ff5cd24f5f9d75065",
+        "name":"Bandırma",
+        "city" : "Balıkesir"
+    },
+    ...
+]
+```
+
+
 <a name="cities"></a>
 ## İller (/cities)
 Toplam 81 il bilgisini json array olarak listeler. Default alanlar sadece _id ve isim bilgisidir.
