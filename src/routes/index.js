@@ -3,6 +3,7 @@ import cityRoutes from './city.routes';
 import townRoutes from './town.routes';
 import districtRoutes from './district.routes';
 import neightborhoodsRoutes from './neighborhoods.routes';
+import searchRoutes from './search.routes';
 
 
 module.exports = (app) => {
@@ -10,4 +11,5 @@ module.exports = (app) => {
 	app.use(`/${config.apiVersion}/towns`, townRoutes);
 	app.use(`/${config.apiVersion}/districts`, districtRoutes);
 	app.use(`/${config.apiVersion}/neighborhoods`, neightborhoodsRoutes);
+	app.use(`/${config.apiVersion}/search`, searchRoutes);
 };
