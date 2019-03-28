@@ -2,7 +2,7 @@
 
 Bu API Türkiye'de yer alan il, ilçe ve mahalle bilgilerini içerir. İl ve ilçe bazında geolocation (enlem-boylam, poligon ve boundingbox) bilgileri de yer almaktadır. Mongodb yedek dosyalarını [buradan](https://drive.google.com/file/d/1e6v4S_-BK8Zs43HYBH5ftidBDrHlOZY7/view?usp=sharing) indirebilirsiniz.
 
-**Ayrıca isterseniz bu servisi http://geoapi.sanalonyedi.net/v1 adresi üzerinden ücretsiz olarak kullanabilirsiniz.**
+**Ayrıca isterseniz bu servisi https://il-ilce-rest-api.herokuapp.com/v1 adresi üzerinden ücretsiz olarak kullanabilirsiniz.**
 
 ## İçindekiler
 * [Servis Kullanımı](#service)
@@ -33,9 +33,9 @@ Kısıtlamalar: Alınan genel sonuçlarda maksimum 100 data servis edilir. Bu sa
 Sıralama City > Towns > Districts > Neighborhoods şeklindedir.  
 Sıralama İl > İlçe > Semt > Mahalle şeklindedir.
 
-Servis adresi : http://geoapi.sanalonyedi.net/v1
+Servis adresi : https://il-ilce-rest-api.herokuapp.com/v1
 
-**Örnek : http://geoapi.sanalonyedi.net/v1/cities**  
+**Örnek : https://il-ilce-rest-api.herokuapp.com/v1/cities**  
 
 <a name="search"></a>
 ## Koordinat Arama (/search/coordinates)
